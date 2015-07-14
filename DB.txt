@@ -1,0 +1,20 @@
+create table driver(
+id_driver int IDENTITY not null PRIMARY KEY,
+fname nvarchar(20) not null,
+lname nvarchar(20) not null,
+address nvarchar(50) not null,
+sity nvarchar(20) not null,
+egn bigint not null UNIQUE,
+machine_id int null,
+)default charset=utf8;
+
+create table machine(
+id_machine int IDENTITY not null PRIMARY KEY,
+marka nvarchar(20) not null,
+model nvarchar(20) not null,
+make int not null,
+places int not null,
+reg nvrchar(10) not null UNIQUE,
+)default charset=utf8;
+
+ALTER TABLE DRIVER ADD FOREIGN KEY ( MACHINE_ID  ) REFERENCES MACHINE ( ID_MACHINE  ) ;
